@@ -34,7 +34,7 @@ else
     cd /ovs
     ./boot.sh
     ./configure --localstatedir="/var" --sysconfdir="/etc" --prefix="/usr" \
-        --enable-ssl --disable-libcapng --enable-Werror CFLAGS="${cflags}"
+        --enable-ssl --disable-libcapng CFLAGS="${cflags}"
     make -j$(($(nproc) + 1)) V=0
     make install
     cp ./ovsdb/_server.ovsschema /root/ovsdb-etcd/schemas/
@@ -58,7 +58,7 @@ else
     # build. Note: no explicit install is needed here.
     ./boot.sh
     ./configure --localstatedir="/var" --sysconfdir="/etc" --prefix="/usr" \
-    --enable-ssl --disable-libcapng --enable-Werror CFLAGS="${cflags}"
+    --enable-ssl --disable-libcapng CFLAGS="${cflags}"
     make -j$(($(nproc) + 1)) V=0
 
     cd /ovn
